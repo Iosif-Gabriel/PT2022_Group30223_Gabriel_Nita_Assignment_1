@@ -7,7 +7,7 @@ public class Interfata {
     private static JFrame jf=new JFrame("Calculator");
     private static JLabel jl=new JLabel();
     private static JTextField jtf=new JTextField("Polinom 1");
-    private static JTextField jtf2=new JTextField("Polinom 2");
+    private static JTextField jtf2=new JTextField("Polinom 3");
 
 
     public static void main(String[] args) {
