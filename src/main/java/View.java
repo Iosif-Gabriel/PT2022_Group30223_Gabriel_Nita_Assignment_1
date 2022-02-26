@@ -1,9 +1,11 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 
-
-public class View extends JFrame{
+public class View extends JFrame implements FocusListener {
 
     private JButton button0;
     private JButton button1;
@@ -36,11 +38,14 @@ public class View extends JFrame{
     private JLabel pol1;
     private JLabel pol2;
     private JLabel labelRez;
+    private JTextField previouslyFocusedTextBox= textPol1;
+
 
     public View() {
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setBounds(300, 200, 312, 370);
+        this.setResizable(false);
         title=new JLabel("Calculator");
 
         button0 = new JButton ("0");
@@ -67,12 +72,17 @@ public class View extends JFrame{
         buttonDevide = new JButton ("Divide");
         buttonDerivate = new JButton ("Derivate");
         buttonIntegrate = new JButton ("Integrate");
-        textPol1 = new JTextField (5);
-        textPol2 = new JTextField (5);
+        textPol1 = new JTextField ();
+        textPol2 = new JTextField ();
+        textPol2.addFocusListener( this);
+        textPol1.addFocusListener( this);
+        textPol2.setFocusable(true);
+        textPol2.setFocusable(true);
         labelJ = new JLabel ("Calculator");
         pol1 = new JLabel ("P1:");
         pol2 = new JLabel ("P2:");
         labelRez = new JLabel ("Rezultat:");
+
 
 
 
@@ -142,6 +152,7 @@ public class View extends JFrame{
         pol1.setBounds (5, 45, 20, 25);
         pol2.setBounds (5, 80, 20, 25);
         labelRez.setBounds (0, 110, 55, 25);
+
     }
 
     public String get1pol(){
@@ -324,11 +335,47 @@ public class View extends JFrame{
         return buttonX;
     }
 
-    public void setTextPol1(String concat) {
-        this.textPol1 = textPol1;
+    public JButton getButton_PolAddition() {
+        return button_PolAddition;
     }
 
-    public void setTextPol2() {
-        this.textPol2 = textPol2;
+    public JButton getButton_polSubs() {
+        return button_polSubs;
+    }
+
+    public JButton getButtonDell() {
+        return buttonDell;
+    }
+
+    public JButton getButtonMultiply() {
+        return buttonMultiply;
+    }
+
+    public JButton getButtonDevide() {
+        return buttonDevide;
+    }
+
+    public JButton getButtonDerivate() {
+        return buttonDerivate;
+    }
+
+    public JButton getButtonIntegrate() {
+        return buttonIntegrate;
+    }
+
+    @Override
+    public void focusGained(FocusEvent ev) {
+        if(ev.getSource() instanceof JTextField) {
+            previouslyFocusedTextBox = (JTextField) ev.getSource();
+        }
+    }
+
+    @Override
+    public void focusLost(FocusEvent e) {
+
+    }
+
+    public JTextField getPreviouslyFocusedTextBox() {
+        return previouslyFocusedTextBox;
     }
 }
