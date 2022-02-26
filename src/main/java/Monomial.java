@@ -2,6 +2,11 @@ public class Monomial {
     private int grad;
     private double coeficient;
 
+    public Monomial(int grad, double coeficient){
+        this.setGrad(grad);
+        this.setCoeficient(coeficient);
+    }
+
     public int getGrad() {
         return grad;
     }
