@@ -29,14 +29,12 @@ public class ControllerCalcPol {
         view.dotListener(new DotListener());
         view.plusListener(new PlusListener());
         view.minusListener(new MinusListener());
-        //view.divideListener(new DivideListener());
-       // view.multiListener(new MultiplyListener());
         view.xListener(new XListener());
         view.deleteListener(new DeleteListener());
         view.addpolListener(new AdditionListener());
         view.integrpolListener(new IntegrationListener());
         view.derivListener(new DerivationListener());
-        view.subpolListener(new SubstitutionListener());
+        view.subpolListener(new SubtractionListener());
         view.multypolListener(new MultiplicationListener());
         view.divpolListener(new DivisonListener());
     }
@@ -45,10 +43,10 @@ public class ControllerCalcPol {
         public void actionPerformed(ActionEvent e) {
             if(e.getSource()==view.getButton0()) {
 
-                if(view.getPreviouslyFocusedTextBox().equals(view.getTextPol1())){
+                if(view.getPrevFocusBox().equals(view.getTextPol1())){
                     view.getTextPol1().setText(view.getTextPol1().getText()+"0");
                 }
-                if(view.getPreviouslyFocusedTextBox().equals(view.getTextPol2())){
+                if(view.getPrevFocusBox().equals(view.getTextPol2())){
                     view.getTextPol2().setText(view.getTextPol2().getText()+"0");
                 }
 
@@ -61,10 +59,10 @@ public class ControllerCalcPol {
         public void actionPerformed(ActionEvent e) {
             if(e.getSource()==view.getButton1()) {
 
-                if(view.getPreviouslyFocusedTextBox().equals(view.getTextPol1())){
+                if(view.getPrevFocusBox().equals(view.getTextPol1())){
                     view.getTextPol1().setText(view.getTextPol1().getText()+"1");
                 }
-                if(view.getPreviouslyFocusedTextBox().equals(view.getTextPol2())){
+                if(view.getPrevFocusBox().equals(view.getTextPol2())){
                     view.getTextPol2().setText(view.getTextPol2().getText()+"1");
                 }
 
@@ -78,10 +76,10 @@ public class ControllerCalcPol {
         public void actionPerformed(ActionEvent e) {
             if(e.getSource()==view.getButton2()) {
 
-                if(view.getPreviouslyFocusedTextBox().equals(view.getTextPol1())){
+                if(view.getPrevFocusBox().equals(view.getTextPol1())){
                     view.getTextPol1().setText(view.getTextPol1().getText()+"2");
                 }
-                if(view.getPreviouslyFocusedTextBox().equals(view.getTextPol2())){
+                if(view.getPrevFocusBox().equals(view.getTextPol2())){
                     view.getTextPol2().setText(view.getTextPol2().getText()+"2");
                 }
 
@@ -95,10 +93,10 @@ public class ControllerCalcPol {
         public void actionPerformed(ActionEvent e) {
             if(e.getSource()==view.getButton3()) {
 
-                if(view.getPreviouslyFocusedTextBox().equals(view.getTextPol1())){
+                if(view.getPrevFocusBox().equals(view.getTextPol1())){
                     view.getTextPol1().setText(view.getTextPol1().getText()+"3");
                 }
-                if(view.getPreviouslyFocusedTextBox().equals(view.getTextPol2())){
+                if(view.getPrevFocusBox().equals(view.getTextPol2())){
                     view.getTextPol2().setText(view.getTextPol2().getText()+"3");
                 }
 
@@ -112,10 +110,10 @@ public class ControllerCalcPol {
         public void actionPerformed(ActionEvent e) {
             if(e.getSource()==view.getButton4()) {
 
-                if(view.getPreviouslyFocusedTextBox().equals(view.getTextPol1())){
+                if(view.getPrevFocusBox().equals(view.getTextPol1())){
                     view.getTextPol1().setText(view.getTextPol1().getText()+"4");
                 }
-                if(view.getPreviouslyFocusedTextBox().equals(view.getTextPol2())){
+                if(view.getPrevFocusBox().equals(view.getTextPol2())){
                     view.getTextPol2().setText(view.getTextPol2().getText()+"4");
                 }
 
@@ -129,10 +127,10 @@ public class ControllerCalcPol {
         public void actionPerformed(ActionEvent e) {
             if(e.getSource()==view.getButton5()) {
 
-                if(view.getPreviouslyFocusedTextBox().equals(view.getTextPol1())){
+                if(view.getPrevFocusBox().equals(view.getTextPol1())){
                     view.getTextPol1().setText(view.getTextPol1().getText()+"5");
                 }
-                if(view.getPreviouslyFocusedTextBox().equals(view.getTextPol2())){
+                if(view.getPrevFocusBox().equals(view.getTextPol2())){
                     view.getTextPol2().setText(view.getTextPol2().getText()+"5");
                 }
 
@@ -146,10 +144,10 @@ public class ControllerCalcPol {
         public void actionPerformed(ActionEvent e) {
             if(e.getSource()==view.getButton6()) {
 
-                if(view.getPreviouslyFocusedTextBox().equals(view.getTextPol1())){
+                if(view.getPrevFocusBox().equals(view.getTextPol1())){
                     view.getTextPol1().setText(view.getTextPol1().getText()+"6");
                 }
-                if(view.getPreviouslyFocusedTextBox().equals(view.getTextPol2())){
+                if(view.getPrevFocusBox().equals(view.getTextPol2())){
                     view.getTextPol2().setText(view.getTextPol2().getText()+"6");
                 }
 
@@ -163,10 +161,10 @@ public class ControllerCalcPol {
         public void actionPerformed(ActionEvent e) {
             if(e.getSource()==view.getButton7()) {
 
-                if(view.getPreviouslyFocusedTextBox().equals(view.getTextPol1())){
+                if(view.getPrevFocusBox().equals(view.getTextPol1())){
                     view.getTextPol1().setText(view.getTextPol1().getText()+"7");
                 }
-                if(view.getPreviouslyFocusedTextBox().equals(view.getTextPol2())){
+                if(view.getPrevFocusBox().equals(view.getTextPol2())){
                     view.getTextPol2().setText(view.getTextPol2().getText()+"7");
                 }
 
@@ -180,10 +178,10 @@ public class ControllerCalcPol {
         public void actionPerformed(ActionEvent e) {
             if(e.getSource()==view.getButton8()) {
 
-                if(view.getPreviouslyFocusedTextBox().equals(view.getTextPol1())){
+                if(view.getPrevFocusBox().equals(view.getTextPol1())){
                     view.getTextPol1().setText(view.getTextPol1().getText()+"8");
                 }
-                if(view.getPreviouslyFocusedTextBox().equals(view.getTextPol2())){
+                if(view.getPrevFocusBox().equals(view.getTextPol2())){
                     view.getTextPol2().setText(view.getTextPol2().getText()+"8");
                 }
 
@@ -195,10 +193,10 @@ public class ControllerCalcPol {
         public void actionPerformed(ActionEvent e) {
             if(e.getSource()==view.getButton9()) {
 
-                if(view.getPreviouslyFocusedTextBox().equals(view.getTextPol1())){
+                if(view.getPrevFocusBox().equals(view.getTextPol1())){
                     view.getTextPol1().setText(view.getTextPol1().getText()+"9");
                 }
-                if(view.getPreviouslyFocusedTextBox().equals(view.getTextPol2())){
+                if(view.getPrevFocusBox().equals(view.getTextPol2())){
                     view.getTextPol2().setText(view.getTextPol2().getText()+"9");
                 }
 
@@ -212,10 +210,10 @@ public class ControllerCalcPol {
         public void actionPerformed(ActionEvent e) {
             if(e.getSource()==view.getButtonPower()) {
 
-                if(view.getPreviouslyFocusedTextBox().equals(view.getTextPol1())){
+                if(view.getPrevFocusBox().equals(view.getTextPol1())){
                     view.getTextPol1().setText(view.getTextPol1().getText()+"^");
                 }
-                if(view.getPreviouslyFocusedTextBox().equals(view.getTextPol2())){
+                if(view.getPrevFocusBox().equals(view.getTextPol2())){
                     view.getTextPol2().setText(view.getTextPol2().getText()+"^");
                 }
 
@@ -229,10 +227,10 @@ public class ControllerCalcPol {
         public void actionPerformed(ActionEvent e) {
             if(e.getSource()==view.getButtonDot()) {
 
-                if(view.getPreviouslyFocusedTextBox().equals(view.getTextPol1())){
+                if(view.getPrevFocusBox().equals(view.getTextPol1())){
                     view.getTextPol1().setText(view.getTextPol1().getText()+".");
                 }
-                if(view.getPreviouslyFocusedTextBox().equals(view.getTextPol2())){
+                if(view.getPrevFocusBox().equals(view.getTextPol2())){
                     view.getTextPol2().setText(view.getTextPol2().getText()+".");
                 }
 
@@ -244,10 +242,10 @@ public class ControllerCalcPol {
         public void actionPerformed(ActionEvent e) {
             if(e.getSource()==view.getButtonAdd()) {
 
-                if(view.getPreviouslyFocusedTextBox().equals(view.getTextPol1())){
+                if(view.getPrevFocusBox().equals(view.getTextPol1())){
                     view.getTextPol1().setText(view.getTextPol1().getText()+"+");
                 }
-                if(view.getPreviouslyFocusedTextBox().equals(view.getTextPol2())){
+                if(view.getPrevFocusBox().equals(view.getTextPol2())){
                     view.getTextPol2().setText(view.getTextPol2().getText()+"+");
                 }
 
@@ -259,10 +257,10 @@ public class ControllerCalcPol {
         public void actionPerformed(ActionEvent e) {
             if(e.getSource()==view.getButtonSubs()) {
 
-                if(view.getPreviouslyFocusedTextBox().equals(view.getTextPol1())){
+                if(view.getPrevFocusBox().equals(view.getTextPol1())){
                     view.getTextPol1().setText(view.getTextPol1().getText()+"-");
                 }
-                if(view.getPreviouslyFocusedTextBox().equals(view.getTextPol2())){
+                if(view.getPrevFocusBox().equals(view.getTextPol2())){
                     view.getTextPol2().setText(view.getTextPol2().getText()+"-");
                 }
 
@@ -270,44 +268,14 @@ public class ControllerCalcPol {
         }
     }
 
-/*    class MultiplyListener implements ActionListener{
-        public void actionPerformed(ActionEvent e) {
-            if(e.getSource()==view.getButtonTimes()) {
-
-                if(view.getPreviouslyFocusedTextBox().equals(view.getTextPol1())){
-                    view.getTextPol1().setText(view.getTextPol1().getText()+"*");
-                }
-                if(view.getPreviouslyFocusedTextBox().equals(view.getTextPol2())){
-                    view.getTextPol2().setText(view.getTextPol2().getText()+"*");
-                }
-
-            }
-        }
-    }
-
-    class DivideListener implements ActionListener{
-        public void actionPerformed(ActionEvent e) {
-            if(e.getSource()==view.getButtonDiv()) {
-
-                if(view.getPreviouslyFocusedTextBox().equals(view.getTextPol1())){
-                    view.getTextPol1().setText(view.getTextPol1().getText()+"/");
-                }
-                if(view.getPreviouslyFocusedTextBox().equals(view.getTextPol2())){
-                    view.getTextPol2().setText(view.getTextPol2().getText()+"/");
-                }
-
-            }
-        }
-    }*/
-
     class XListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
             if(e.getSource()==view.getButtonX()) {
 
-                if(view.getPreviouslyFocusedTextBox().equals(view.getTextPol1())){
+                if(view.getPrevFocusBox().equals(view.getTextPol1())){
                     view.getTextPol1().setText(view.getTextPol1().getText()+"x");
                 }
-                if(view.getPreviouslyFocusedTextBox().equals(view.getTextPol2())){
+                if(view.getPrevFocusBox().equals(view.getTextPol2())){
                     view.getTextPol2().setText(view.getTextPol2().getText()+"x");
                 }
 
@@ -319,11 +287,11 @@ public class ControllerCalcPol {
         public void actionPerformed(ActionEvent e) {
             if(e.getSource()==view.getButtonDell()) {
 
-                if(view.getPreviouslyFocusedTextBox().equals(view.getTextPol1())){
+                if(view.getPrevFocusBox().equals(view.getTextPol1())){
                     String res=view.getTextPol1().getText().substring(0, view.getTextPol1().getText().length()-1);
                     view.getTextPol1().setText(res);
                 }
-                if(view.getPreviouslyFocusedTextBox().equals(view.getTextPol2())){
+                if(view.getPrevFocusBox().equals(view.getTextPol2())){
                     String res=view.getTextPol2().getText().substring(0, view.getTextPol2().getText().length()-1);
                     view.getTextPol2().setText(res);
                 }
@@ -339,35 +307,35 @@ public class ControllerCalcPol {
             String pol2=view.getTextPol2().getText();
             Operation op=new Operation();
                 try {
-                    Polinom.verificarePoli(pol1);
-                    Polinom.verificarePoli(pol2);
-                    Polinom p1= Polinom.createPolinom(pol1);
-                    Polinom p2= Polinom.createPolinom(pol2);
-                    Polinom addition=op.addition(p1,p2);
+                    Polinom.verifPoli(pol1);
+                    Polinom.verifPoli(pol2);
+                    Polinom polinom1=new Polinom(Polinom.createPolinom(pol1));
+                    Polinom polinom2=new Polinom(Polinom.createPolinom(pol2));
+                    Polinom addition=op.addition(polinom1,polinom2);
                     JOptionPane.showMessageDialog(null,"Adunare:"+addition);
                 } catch (Exception ex) {
-                    ex.printStackTrace();
+                    JOptionPane.showMessageDialog(null,ex.getMessage(),"Eroare",JOptionPane.ERROR_MESSAGE);
                 }
 
             }
         }
     }
 
-    class SubstitutionListener implements ActionListener{
+    class SubtractionListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
             if(e.getSource()==view.getButton_polSubs()){
                 String pol1=view.getTextPol1().getText();
                 String pol2=view.getTextPol2().getText();
                 Operation op= new Operation();
                 try {
-                    Polinom.verificarePoli(pol1);
-                    Polinom.verificarePoli(pol2);
-                    Polinom p1= Polinom.createPolinom(pol1);
-                    Polinom p2= Polinom.createPolinom(pol2);
-                    Polinom substitution=op.substitution(p1,p2);
-                    JOptionPane.showMessageDialog(null,"Scadere:"+substitution);
+                    Polinom.verifPoli(pol1);
+                    Polinom.verifPoli(pol2);
+                    Polinom polinom1=new Polinom(Polinom.createPolinom(pol1));
+                    Polinom polinom2=new Polinom(Polinom.createPolinom(pol2));
+                    Polinom subtraction=op.subtraction(polinom1,polinom2);
+                    JOptionPane.showMessageDialog(null,"Scadere:"+subtraction);
                 } catch (Exception ex) {
-                    ex.printStackTrace();
+                    JOptionPane.showMessageDialog(null,ex.getMessage(),"Eroare",JOptionPane.ERROR_MESSAGE);
                 }
 
             }
@@ -378,13 +346,18 @@ public class ControllerCalcPol {
         public void actionPerformed(ActionEvent e) {
             if(e.getSource()==view.getButtonIntegrate()){
                 String pol1=view.getTextPol1().getText();
+                String pol2=view.getTextPol2().getText();
+                Operation op=new Operation();
                 try {
-                    Polinom.verificarePoli(pol1);
-                    Polinom polinom1= Polinom.createPolinom(pol1);
-                    Polinom integrare= Operation.integration(polinom1);
+                    Polinom.verifPoli(pol1);
+                    Polinom polinom1=new Polinom(Polinom.createPolinom(pol1));
+                    Polinom integrare= op.integration(polinom1);
+                    if(!pol2.isEmpty()){
+                        JOptionPane.showMessageDialog(null,"Se integreaza doar polionomul 1");
+                    }
                     JOptionPane.showMessageDialog(null,"Integrare:"+integrare);
                 } catch (Exception ex) {
-                    ex.printStackTrace();
+                    JOptionPane.showMessageDialog(null,ex.getMessage(),"Eroare",JOptionPane.ERROR_MESSAGE);
                 }
 
             }
@@ -395,13 +368,18 @@ public class ControllerCalcPol {
         public void actionPerformed(ActionEvent e) {
             if(e.getSource()==view.getButtonDerivate()){
                 String pol1=view.getTextPol1().getText();
+                String pol2=view.getTextPol2().getText();
+                Operation op=new Operation();
                 try {
-                    Polinom.verificarePoli(pol1);
-                    Polinom polinom1= Polinom.createPolinom(pol1);
-                    Polinom derivare= Operation.derivation(polinom1);
+                    Polinom.verifPoli(pol1);
+                    Polinom polinom1=new Polinom(Polinom.createPolinom(pol1));
+                    Polinom derivare= op.derivation(polinom1);
+                    if(!pol2.isEmpty()){
+                        JOptionPane.showMessageDialog(null,"Se deriveaza doar polionomul 1");
+                    }
                     JOptionPane.showMessageDialog(null,"Derivare:"+ derivare);
                 } catch (Exception ex) {
-                    ex.printStackTrace();
+                    JOptionPane.showMessageDialog(null,ex.getMessage(),"Eroare",JOptionPane.ERROR_MESSAGE);
                 }
 
             }
@@ -415,14 +393,14 @@ public class ControllerCalcPol {
                 String pol2=view.getTextPol2().getText();
                 Operation op=new Operation();
                 try {
-                    Polinom.verificarePoli(pol1);
-                    Polinom.verificarePoli(pol2);
-                    Polinom polinom1= Polinom.createPolinom(pol1);
-                    Polinom polinom2= Polinom.createPolinom(pol2);
+                    Polinom.verifPoli(pol1);
+                    Polinom.verifPoli(pol2);
+                    Polinom polinom1=new Polinom(Polinom.createPolinom(pol1));
+                    Polinom polinom2=new Polinom(Polinom.createPolinom(pol2));
                     Polinom multiply=op.multiplication(polinom1,polinom2);
                     JOptionPane.showMessageDialog(null,"Inmultire:"+ multiply);
                 } catch (Exception ex) {
-                    ex.printStackTrace();
+                    JOptionPane.showMessageDialog(null,ex.getMessage(),"Eroare",JOptionPane.ERROR_MESSAGE);
                 }
 
             }
@@ -436,16 +414,19 @@ public class ControllerCalcPol {
                 String pol2=view.getTextPol2().getText();
                 Operation op=new Operation();
                 try {
-                    Polinom.verificarePoli(pol1);
-                    Polinom.verificarePoli(pol2);
-                    Polinom polinom1= Polinom.createPolinom(pol1);
-                    Polinom polinom2= Polinom.createPolinom(pol2);
+                    Polinom.verifPoli(pol1);
+                    Polinom.verifPoli(pol2);
+                    Polinom polinom1=new Polinom(Polinom.createPolinom(pol1));
+                    Polinom polinom2=new Polinom(Polinom.createPolinom(pol2));
+                    if (polinom1.getPoli().get(0).getGrad() < polinom2.getPoli().get(0).getGrad()) {
+                        throw new Exception("Polinomul 1 trebuie sa aibe puterea mai mare");
+                    }
                     Polinom cat=new Polinom();
                     Polinom rest=new Polinom();
                     op.division(polinom1,polinom2,cat,rest);
                     JOptionPane.showMessageDialog(null,"Impartire: " +"Cat:"+cat+" "+"Rest:"+rest);
                 } catch (Exception ex) {
-                    ex.printStackTrace();
+                    JOptionPane.showMessageDialog(null,ex.getMessage(),"Eroare",JOptionPane.ERROR_MESSAGE);
                 }
 
             }

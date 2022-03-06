@@ -9,7 +9,7 @@ public class Polinom {
     private List<Monomial> poli = new ArrayList<>();
 
     public Polinom(Polinom pol1) {
-        this.poli=pol1.getPoli();
+        this.poli=sortPoli(pol1.getPoli());
     }
     public Polinom() {
         super();
@@ -28,9 +28,7 @@ public class Polinom {
     }
 
     public void setPoli(List<Monomial> poli) {
-
         this.poli = sortPoli(poli);
-        //this.poli=poli;
     }
 
     public List<Monomial> sortPoli(List<Monomial> poli){
@@ -38,19 +36,26 @@ public class Polinom {
         return poli;
     }
 
-    public static void verificarePoli(String poli) throws Exception {
-        String cor = "0123456789+-x^";
-        int merge=0;
-        for (int i = 0; i < poli.length(); i++) {
-            merge = 0;
-            for(int k=0;k<cor.length();k++){
-                if(poli.charAt(i)==cor.charAt(k) || poli.charAt(i)=='.'){
-                    merge=1;
+    public static void verifPoli(String poli) throws Exception {
+        String cor = "459+678-x^0123";
+        int merge;
+        if(!poli.isEmpty()){
+            for (int i = 0; i < poli.length(); i++) {
+                merge = 0;
+                for(int k=0;k<cor.length();k++){
+                    if (poli.charAt(i) == cor.charAt(k) || poli.charAt(i) == '.') {
+                        merge = 1;
+                        break;
+                    }
                 }
+                if (merge == 0)
+                    throw new Exception("Nu e polinom");
             }
-            if (merge == 0)
-                throw new Exception("Nu e polinom");
+
+        }else{
+            throw new Exception("Empty");
         }
+
 
     }
 
@@ -59,7 +64,6 @@ public class Polinom {
         int k = polinom.length() - 1;
         int nr=0;
         try{
-            //Integer.parseInt(polinom);
             Double.parseDouble(polinom);
             res.insert(polinom.length(), "x^0");
             polinom = res.toString();
@@ -164,28 +168,6 @@ public class Polinom {
         return poli1;
     }
 
-    public static void puneZero(List<Double> coef,List<Integer> pow){
-        for(int c=1;c<coef.size();c++){
-            if(coef.get(c)+1!=coef.get(c)-1){
-                coef.add( c, (double) 0);
-                pow.add(c,pow.get(c-1)-1);
-            }
-        }
-        int was=pow.get(pow.size()-1);
-        if(pow.size()==1){
-            if(was>1){
-                for(int c1=1;c1<=was;c1++){
-                    pow.add(c1,was-c1);
-                    coef.add(c1, (double) 0);
-                }
-            }
-        }
-        if(pow.get(pow.size()-1)!=0){
-            coef.add(pow.size(),(double)0);
-            pow.add(pow.size(),0);
-        }
-    }
-
     @Override
     public String toString() {
         StringBuilder poli= new StringBuilder();
@@ -198,9 +180,7 @@ public class Polinom {
                     poli.append(mon.getCoeficient()).append("x^").append(mon.getGrad());
                 }
             }
-
         }
-
         if(poli.length()!=0 && poli.charAt(0)=='+')
         poli = new StringBuilder(poli.substring(1));
 
@@ -209,7 +189,6 @@ public class Polinom {
         }else{
             return poli.toString();
         }
-
     }
 
 }

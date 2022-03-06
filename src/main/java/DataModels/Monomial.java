@@ -1,8 +1,6 @@
 package DataModels;
 
-import java.io.Serializable;
-
-public class Monomial implements Serializable {
+public class Monomial {
     private int grad;
     private double coeficient;
 

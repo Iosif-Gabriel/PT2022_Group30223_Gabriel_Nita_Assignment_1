@@ -21,8 +21,6 @@ public class View extends JFrame implements FocusListener {
     private JButton button7;
     private JButton button6;
     private JButton buttonDot;
-    //private JButton buttonTimes;
-    //private JButton buttonDiv;
     private JButton buttonPower;
     private JButton buttonX;
     private JButton button_PolAddition;
@@ -38,7 +36,6 @@ public class View extends JFrame implements FocusListener {
     private JLabel labelJ;
     private JLabel pol1;
     private JLabel pol2;
-    private JLabel labelRez;
     private JTextField prevFocus= textPol1;
 
 
@@ -62,8 +59,6 @@ public class View extends JFrame implements FocusListener {
         button7 = new JButton ("7");
         button6 = new JButton ("6");
         buttonDot = new JButton (".");
-       // buttonTimes = new JButton ("*");
-        //buttonDiv = new JButton ("/");
         buttonPower = new JButton ("^");
         buttonX = new JButton ("x");
         button_PolAddition = new JButton ("Addition");
@@ -82,7 +77,6 @@ public class View extends JFrame implements FocusListener {
         labelJ = new JLabel ("Calculator");
         pol1 = new JLabel ("P1:");
         pol2 = new JLabel ("P2:");
-        labelRez = new JLabel ("Rezultat:");
 
 
 
@@ -104,8 +98,6 @@ public class View extends JFrame implements FocusListener {
         this.add (button7);
         this.add (button6);
         this.add (buttonDot);
-        //this.add (buttonTimes);
-        //this.add (buttonDiv);
         this.add (buttonPower);
         this.add (buttonX);
         this.add (button_PolAddition);
@@ -120,7 +112,6 @@ public class View extends JFrame implements FocusListener {
         this.add (labelJ);
         this.add (pol1);
         this.add (pol2);
-        this.add (labelRez);
 
 
         button0.setBounds (150, 260, 50, 25);
@@ -136,8 +127,6 @@ public class View extends JFrame implements FocusListener {
         button7.setBounds (0, 310, 50, 25);
         button6.setBounds (100, 285, 50, 25);
         buttonDot.setBounds (200, 310, 50, 25);
-        //buttonTimes.setBounds (200, 285, 50, 25);
-        //buttonDiv.setBounds (250, 285, 50, 25);
         buttonPower.setBounds (150, 310, 50, 25);
         buttonX.setBounds (200, 260, 50, 25);
         button_PolAddition.setBounds (0, 185, 110, 25);
@@ -152,16 +141,7 @@ public class View extends JFrame implements FocusListener {
         labelJ.setBounds (115, -5, 100, 25);
         pol1.setBounds (5, 45, 20, 25);
         pol2.setBounds (5, 80, 20, 25);
-        labelRez.setBounds (0, 110, 55, 25);
 
-    }
-
-    public String get1pol(){
-       return this.textPol1.getText();
-    }
-
-    public String get2pol(){
-        return this.textPol2.getText();
     }
 
     public void zeroListener(ActionListener actionListener){
@@ -212,13 +192,6 @@ public class View extends JFrame implements FocusListener {
         this.buttonAdd.addActionListener(actionListener);
     }
 
-/*    public void multiListener(ActionListener actionListener){
-        this.buttonTimes.addActionListener(actionListener);
-    }
-
-    public void divideListener(ActionListener actionListener){
-        this.buttonDiv.addActionListener(actionListener);
-    }*/
 
     public void powerListener(ActionListener actionListener){
         this.buttonPower.addActionListener(actionListener);
@@ -320,14 +293,6 @@ public class View extends JFrame implements FocusListener {
         return buttonDot;
     }
 
-    /*public JButton getButtonTimes() {
-        return buttonTimes;
-    }
-
-    public JButton getButtonDiv() {
-        return buttonDiv;
-    }*/
-
     public JButton getButtonPower() {
         return buttonPower;
     }
@@ -376,7 +341,7 @@ public class View extends JFrame implements FocusListener {
 
     }
 
-    public JTextField getPreviouslyFocusedTextBox() {
+    public JTextField getPrevFocusBox() {
         return prevFocus;
     }
 }

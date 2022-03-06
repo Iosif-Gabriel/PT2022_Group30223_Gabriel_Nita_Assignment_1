@@ -37,7 +37,7 @@ public class Operation {
     }
 
 
-    public Polinom substitution(Polinom pol1, Polinom pol2) {
+    public Polinom subtraction(Polinom pol1, Polinom pol2) {
         Polinom rezultat = new Polinom(pol1);
         List<Monomial> lmon1 = new ArrayList<>(pol1.getPoli());
         List<Monomial> lmon2 = new ArrayList<>(pol2.getPoli());
@@ -68,7 +68,7 @@ public class Operation {
         return rezultat;
     }
 
-    public static Polinom integration(Polinom poli) {
+    public  Polinom integration(Polinom poli) {
         for (Monomial mon : poli.getPoli()) {
             mon.setGrad(mon.getGrad() + 1);
             double res = mon.getCoeficient() / mon.getGrad();
@@ -77,7 +77,7 @@ public class Operation {
         return poli;
     }
 
-    public static Polinom derivation(Polinom p1) {
+    public Polinom derivation(Polinom p1) {
         for (Monomial mon : p1.getPoli()) {
             if (mon.getCoeficient() > 0) {
                 mon.setCoeficient(mon.getGrad() * mon.getCoeficient());
@@ -114,14 +114,10 @@ public class Operation {
     }
 
     public void division(Polinom pol1, Polinom pol2, Polinom cat, Polinom rest) {
-        Polinom p1 = new Polinom(), re = new Polinom(), mm;
-        if (pol1.getPoli().size() < pol2.getPoli().size()) {
-            p1 = pol1;
-            pol1 = pol2;
-            pol2 = p1;
-        }
+        Polinom p1 = new Polinom();
+        Polinom re = new Polinom();
         Operation op = new Operation();
-        while (pol1.getPoli().size() >1) {
+        while (pol1.getPoli().size()!=0&&!(pol1.getPoli().get(0).getGrad()<pol2.getPoli().get(0).getGrad())) {
             List<Double> coef = new ArrayList<>();
             List<Integer> pow = new ArrayList<>();
             coef.add(pol1.getPoli().get(0).getCoeficient() / pol2.getPoli().get(0).getCoeficient());
@@ -129,7 +125,7 @@ public class Operation {
             re = Polinom.makePoli(coef, pow);
             cat.addToList(re.getPoli().get(0));
             re=op.multiplication(re,pol2);
-            pol1=op.substitution(pol1,re);
+            pol1=op.subtraction(pol1,re);
             pol1.removeFromList(pol1.getPoli().get(0));
         }
         if(pol1.getPoli().size()!=0){
