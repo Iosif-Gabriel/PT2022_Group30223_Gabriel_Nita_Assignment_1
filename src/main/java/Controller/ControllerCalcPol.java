@@ -1,3 +1,10 @@
+package Controller;
+
+import DataModels.Operation;
+import DataModels.Polinom;
+import View.View;
+
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -22,10 +29,16 @@ public class ControllerCalcPol {
         view.dotListener(new DotListener());
         view.plusListener(new PlusListener());
         view.minusListener(new MinusListener());
-        view.divideListener(new DivideListener());
-        view.multiListener(new MultiplyListener());
+        //view.divideListener(new DivideListener());
+       // view.multiListener(new MultiplyListener());
         view.xListener(new XListener());
         view.deleteListener(new DeleteListener());
+        view.addpolListener(new AdditionListener());
+        view.integrpolListener(new IntegrationListener());
+        view.derivListener(new DerivationListener());
+        view.subpolListener(new SubstitutionListener());
+        view.multypolListener(new MultiplicationListener());
+        view.divpolListener(new DivisonListener());
     }
 
     class ZeroListener implements ActionListener{
@@ -257,7 +270,7 @@ public class ControllerCalcPol {
         }
     }
 
-    class MultiplyListener implements ActionListener{
+/*    class MultiplyListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
             if(e.getSource()==view.getButtonTimes()) {
 
@@ -285,7 +298,7 @@ public class ControllerCalcPol {
 
             }
         }
-    }
+    }*/
 
     class XListener implements ActionListener{
         public void actionPerformed(ActionEvent e) {
@@ -313,6 +326,126 @@ public class ControllerCalcPol {
                 if(view.getPreviouslyFocusedTextBox().equals(view.getTextPol2())){
                     String res=view.getTextPol2().getText().substring(0, view.getTextPol2().getText().length()-1);
                     view.getTextPol2().setText(res);
+                }
+
+            }
+        }
+    }
+
+    class AdditionListener implements ActionListener{
+        public void actionPerformed(ActionEvent e) {
+            if(e.getSource()==view.getButton_PolAddition()){
+            String pol1=view.getTextPol1().getText();
+            String pol2=view.getTextPol2().getText();
+            Operation op=new Operation();
+                try {
+                    Polinom.verificarePoli(pol1);
+                    Polinom.verificarePoli(pol2);
+                    Polinom p1= Polinom.createPolinom(pol1);
+                    Polinom p2= Polinom.createPolinom(pol2);
+                    Polinom addition=op.addition(p1,p2);
+                    JOptionPane.showMessageDialog(null,"Adunare:"+addition);
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+
+            }
+        }
+    }
+
+    class SubstitutionListener implements ActionListener{
+        public void actionPerformed(ActionEvent e) {
+            if(e.getSource()==view.getButton_polSubs()){
+                String pol1=view.getTextPol1().getText();
+                String pol2=view.getTextPol2().getText();
+                Operation op= new Operation();
+                try {
+                    Polinom.verificarePoli(pol1);
+                    Polinom.verificarePoli(pol2);
+                    Polinom p1= Polinom.createPolinom(pol1);
+                    Polinom p2= Polinom.createPolinom(pol2);
+                    Polinom substitution=op.substitution(p1,p2);
+                    JOptionPane.showMessageDialog(null,"Scadere:"+substitution);
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+
+            }
+        }
+    }
+
+    class IntegrationListener implements ActionListener{
+        public void actionPerformed(ActionEvent e) {
+            if(e.getSource()==view.getButtonIntegrate()){
+                String pol1=view.getTextPol1().getText();
+                try {
+                    Polinom.verificarePoli(pol1);
+                    Polinom polinom1= Polinom.createPolinom(pol1);
+                    Polinom integrare= Operation.integration(polinom1);
+                    JOptionPane.showMessageDialog(null,"Integrare:"+integrare);
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+
+            }
+        }
+    }
+
+    class DerivationListener implements ActionListener{
+        public void actionPerformed(ActionEvent e) {
+            if(e.getSource()==view.getButtonDerivate()){
+                String pol1=view.getTextPol1().getText();
+                try {
+                    Polinom.verificarePoli(pol1);
+                    Polinom polinom1= Polinom.createPolinom(pol1);
+                    Polinom derivare= Operation.derivation(polinom1);
+                    JOptionPane.showMessageDialog(null,"Derivare:"+ derivare);
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+
+            }
+        }
+    }
+
+    class MultiplicationListener implements ActionListener{
+        public void actionPerformed(ActionEvent e) {
+            if(e.getSource()==view.getButtonMultiply()){
+                String pol1=view.getTextPol1().getText();
+                String pol2=view.getTextPol2().getText();
+                Operation op=new Operation();
+                try {
+                    Polinom.verificarePoli(pol1);
+                    Polinom.verificarePoli(pol2);
+                    Polinom polinom1= Polinom.createPolinom(pol1);
+                    Polinom polinom2= Polinom.createPolinom(pol2);
+                    Polinom multiply=op.multiplication(polinom1,polinom2);
+                    JOptionPane.showMessageDialog(null,"Inmultire:"+ multiply);
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+
+            }
+        }
+    }
+
+    class DivisonListener implements ActionListener{
+        public void actionPerformed(ActionEvent e) {
+            if(e.getSource()==view.getButtonDevide()){
+                String pol1=view.getTextPol1().getText();
+                String pol2=view.getTextPol2().getText();
+                Operation op=new Operation();
+                try {
+                    Polinom.verificarePoli(pol1);
+                    Polinom.verificarePoli(pol2);
+                    Polinom polinom1= Polinom.createPolinom(pol1);
+                    Polinom polinom2= Polinom.createPolinom(pol2);
+                    Polinom cat=new Polinom();
+                    Polinom rest=new Polinom();
+                    op.division(polinom1,polinom2,cat,rest);
+                    JOptionPane.showMessageDialog(null,"Impartire: " +"Cat:"+cat+" "+"Rest:"+rest);
+                } catch (Exception ex) {
+                    ex.printStackTrace();
                 }
 
             }

@@ -1,8 +1,12 @@
-public class Monomial {
+package DataModels;
+
+import java.io.Serializable;
+
+public class Monomial implements Serializable {
     private int grad;
     private double coeficient;
 
-    public Monomial(int grad, double coeficient){
+    public Monomial(double coeficient ,int grad ){
         this.setGrad(grad);
         this.setCoeficient(coeficient);
     }
@@ -22,4 +26,6 @@ public class Monomial {
     public void setCoeficient(double coeficient) {
         this.coeficient = coeficient;
     }
+
+
 }

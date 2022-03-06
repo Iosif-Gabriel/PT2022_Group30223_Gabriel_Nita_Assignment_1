@@ -1,3 +1,6 @@
+import Controller.ControllerCalcPol;
+import View.View;
+
 public class MVC {
     public static void main(String[] args) {
         View inter=new View();
